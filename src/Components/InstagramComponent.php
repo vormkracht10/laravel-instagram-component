@@ -4,11 +4,11 @@ namespace Vormkracht10\BladeComponentInstagram\Components;
 
 use Exception;
 use GuzzleHttp\Client;
-use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Instagram\Api;
 use Instagram\Auth\Checkpoint\ImapClient;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Vormkracht10\PermanentCache\CachedComponent;
 use Vormkracht10\PermanentCache\Scheduled;
 
@@ -20,8 +20,7 @@ class InstagramComponent extends CachedComponent implements Scheduled
         public string $account,
         public Collection $posts,
         public int $limit = 12,
-    )
-    {
+    ) {
         $this->posts = $this->getMediaFromInstagram();
     }
 
@@ -40,7 +39,7 @@ class InstagramComponent extends CachedComponent implements Scheduled
 
         $cachePool = new FilesystemAdapter('instagram', 0, storage_path('framework/cache'));
 
-        if(config('instagram-component.proxy.url')) {
+        if (config('instagram-component.proxy.url')) {
             $clientConfig = [
                 'proxy' => [
                     'https' => config('instagram-component.proxy.url'),
@@ -68,7 +67,6 @@ class InstagramComponent extends CachedComponent implements Scheduled
 
         return null;
     }
-
 
     public function getMediaFromInstagram()
     {
