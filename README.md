@@ -1,85 +1,25 @@
-# :package_description
+# Laravel Blade Component Template
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/:vendor_slug/:package_slug/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-<!--delete-->
----
-This repo can be used to scaffold a Laravel package. Follow these steps to get started:
+This repository template makes it easy to create a new Laravel Blade Component als an installable Composer package, ready to use in any Laravel project.
 
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
-3. Have fun creating your package.
-4. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
----
-<!--/delete-->
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Click the green button above "Use this template" to make a new repository.
 
-## Installation
+## Structure
 
-You can install the package via composer:
+### Javascript
 
-```bash
-composer require :vendor_slug/:package_slug
-```
+In `resources/js` you can add your source Javascript files.
 
-You can publish and run the migrations with:
+Because we want to make these Components headless, we need to include every Javascript it needs inside the views or add instructions on which Javascript files needs to be added to the asset compilation step inside their existing project.
 
-```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
-php artisan migrate
-```
+### CSS
 
-You can publish the config file with:
+In `resources/css` you can add your source CSS files.
 
-```bash
-php artisan vendor:publish --tag=":package_slug-config"
-```
+### Views
 
-This is the contents of the published config file:
+In `resources/views` you can add your Blade views.
 
-```php
-return [
-];
-```
+### Public
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag=":package_slug-views"
-```
-
-## Usage
-
-```php
-$variable = new VendorName\Skeleton();
-echo $variable->echoPhrase('Hello, VendorName!');
-```
-
-## Testing
-
-```bash
-composer test
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
-## Credits
-
-- [:author_name](https://github.com/:author_username)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+In `public` folder, you can add files that needs to be published in the Laravel app when the package is installed.

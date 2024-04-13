@@ -1,31 +1,34 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "vormkracht10/laravel-blade-component-instagram",
+    "description": "Laravel Blade Component Instagram",
     "keywords": [
-        ":vendor_name",
+        "vormkracht10",
         "laravel",
-        ":package_slug"
+        "laravel-blade-component-instagram"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/vormkracht10/laravel-blade-component-instagram",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Mark van Eijk",
+            "email": "mark@vormkracht10.nl",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^8.3",
+        "illuminate/contracts": "^10.0|^11.0",
+        "pgrimaud/instagram-user-feed": "^7.0",
         "spatie/laravel-package-tools": "^1.14.0",
-        "illuminate/contracts": "^10.0"
+        "symfony/cache": "^7.0",
+        "vormkracht10/laravel-permanent-cache": "dev-main"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.8",
-        "larastan/larastan": "^2.0.1",
-        "orchestra/testbench": "^8.8",
-        "pestphp/pest": "^2.20",
+        "nunomaduro/collision": "^7.9",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-arch": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
         "phpstan/extension-installer": "^1.1",
@@ -35,29 +38,11 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "Vormkracht10\\BladeComponentInstagram\\": "src/"
         }
     },
     "scripts": {
-        "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
-        "prepare": "@php vendor/bin/testbench package:discover --ansi",
-        "build": [
-            "@composer run prepare",
-            "@php vendor/bin/testbench workbench:build --ansi"
-        ],
-        "start": [
-            "Composer\\Config::disableProcessTimeout",
-            "@composer run build",
-            "@php vendor/bin/testbench serve"
-        ],
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
@@ -73,11 +58,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+                "Vormkracht10\\BladeComponentInstagram\\BladeComponentInstagramServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
