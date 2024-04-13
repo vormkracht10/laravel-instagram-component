@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Vormkracht10\InstagramComponent\Components\InstagramComponent;
-use Vormkracht10\InstagramComponent\Components\InstagramCachedComponent;
 
 class InstagramComponentServiceProvider extends PackageServiceProvider
 {
