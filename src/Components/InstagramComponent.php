@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\BladeComponentInstagram\Components;
+namespace Vormkracht10\InstagramComponent\Components;
 
 use Exception;
 use GuzzleHttp\Client;
@@ -27,7 +27,7 @@ class InstagramComponent extends CachedComponent implements Scheduled
     public function render()
     {
         return view()->first([
-            'blade-component-instagram::components.instagram',
+            'instagram-component::components.instagram',
         ]);
     }
 

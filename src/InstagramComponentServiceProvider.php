@@ -1,18 +1,19 @@
 <?php
 
-namespace Vormkracht10\BladeComponentInstagram;
+namespace Vormkracht10\InstagramComponent;
 
 use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Vormkracht10\BladeComponentInstagram\Components\InstagramComponent;
+use Vormkracht10\InstagramComponent\Components\InstagramComponent;
+use Vormkracht10\InstagramComponent\Components\InstagramCachedComponent;
 
-class BladeComponentInstagramServiceProvider extends PackageServiceProvider
+class InstagramComponentServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('blade-component-instagram')
+            ->name('instagram-component')
             ->hasConfigFile('instagram-component')
             ->hasViews();
     }

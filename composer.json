@@ -1,12 +1,13 @@
 {
-    "name": "vormkracht10/laravel-blade-component-instagram",
-    "description": "Laravel Blade Component Instagram",
+    "name": "vormkracht10/laravel-instagram-component",
+    "description": "Laravel Instagram Component",
     "keywords": [
         "vormkracht10",
         "laravel",
-        "laravel-blade-component-instagram"
+        "laravel-blade",
+        "laravel-blade-component"
     ],
-    "homepage": "https://github.com/vormkracht10/laravel-blade-component-instagram",
+    "homepage": "https://github.com/vormkracht10/laravel-instagram-component",
     "license": "MIT",
     "authors": [
         {
@@ -38,7 +39,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Vormkracht10\\BladeComponentInstagram\\": "src/"
+            "Vormkracht10\\InstagramComponent\\": "src/"
         }
     },
     "scripts": {
@@ -58,7 +59,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Vormkracht10\\BladeComponentInstagram\\BladeComponentInstagramServiceProvider"
+                "Vormkracht10\\InstagramComponent\\InstagramComponentServiceProvider"
             ]
         }
     },
