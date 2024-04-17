@@ -21,11 +21,12 @@ class InstagramComponent extends CachedComponent implements Scheduled
         public Collection $posts,
         public int $limit = 12,
     ) {
-        $this->posts = $this->getMediaFromInstagram();
     }
 
     public function render()
     {
+        $this->posts = $this->getMediaFromInstagram();
+
         return view()->first([
             'instagram-component::components.instagram',
         ]);
