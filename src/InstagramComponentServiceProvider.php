@@ -12,8 +12,8 @@ class InstagramComponentServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('instagram-component')
-            ->hasConfigFile('instagram-component')
+            ->name('laravel-instagram-component')
+            ->hasConfigFile()
             ->hasViews();
     }
 
