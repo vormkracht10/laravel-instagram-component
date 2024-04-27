@@ -27,9 +27,7 @@ class InstagramComponent extends CachedComponent implements Scheduled
     {
         $this->posts = $this->getMediaFromInstagram();
 
-        return view()->first([
-            'instagram-component::components.instagram',
-        ]);
+        return view('instagram-component::components.instagram');
     }
 
     public function getApiClient(): Api
