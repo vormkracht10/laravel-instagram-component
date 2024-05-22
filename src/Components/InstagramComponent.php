@@ -138,6 +138,6 @@ class InstagramComponent extends CachedComponent implements Scheduled
 
     public static function schedule($callback)
     {
-        $callback->everyMinute();
+        $callback->hourly();
     }
 }
