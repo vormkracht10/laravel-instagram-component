@@ -18,16 +18,15 @@ class InstagramComponent extends CachedComponent implements Scheduled
 
     public function __construct(
         public string $account,
-        public Collection $posts,
         public int $limit = 12,
     ) {
     }
 
     public function render()
     {
-        $this->posts = $this->getMediaFromInstagram();
+        $posts = $this->getMediaFromInstagram();
 
-        return view('instagram-component::components.instagram');
+        return view('instagram-component::components.instagram', compact('posts'));
     }
 
     public function getApiClient(): Api
